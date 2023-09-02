@@ -9,13 +9,15 @@ body {
     font-family: "Radio Canada", sans-serif;
 
     
-
-    .header {
-      font-size: 50px;
-      text-align: center;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+  }
+  
+ 
+.header {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
 .box {
     display: flex;
@@ -87,8 +89,6 @@ body {
     color: #fff;
 }
 
-  }
-  
 /* Enter your styling here */
 /* styles.css */
 /* styles.css */
