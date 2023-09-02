@@ -47,10 +47,11 @@ const ticTacToe = (element, index) => {
             const [a, b, c] = condition;
             if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
                 result.textContent = `${currentPlayer} wins!`;
-                btns.forEach(btn => btn.disabled = true); 
+                btns.forEach(btn => btn.disabled = true);
+                return true; // Return true to indicate a win
             }
         }
-        return false; // 
+        return false; // No winner yet
     };
     
 
