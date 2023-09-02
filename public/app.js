@@ -2,7 +2,8 @@
 let cells = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let result = document.querySelector('.result');
-let btns = document.querySelectorAll('.btn');
+let btns = document.querySelectorAll('.cell');
+
 let conditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -84,8 +85,8 @@ const resetGame = () => {
     
 };
 
-btns.forEach((btn, i) => {
-    btn.addEventListener('click', () => ticTacToe(btn, i));
+btns.forEach((cell, i) => {
+    cell.addEventListener('click', () => ticTacToe(cell, i));
 });
 
 document.querySelector('#reset').addEventListener('click', resetGame);
