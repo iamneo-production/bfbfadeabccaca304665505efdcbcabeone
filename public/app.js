@@ -17,7 +17,16 @@ let conditions = [
 // Function to handle player moves
 const ticTacToe = (element, index) => {
     // Your game logic here
-
+    const ticTacToe = (element, index) => {
+        if (cells[index] === '' && !checkWin()) {
+            cells[index] = currentPlayer;
+            element.textContent = currentPlayer;
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            // Display the current player's turn
+            result.textContent = `Current Player: ${currentPlayer}`;
+        }
+    };
+    
     /*
     **Part 1: Winning Conditions (Add your code here)**
 
@@ -34,6 +43,17 @@ const ticTacToe = (element, index) => {
 
     // Your code to handle button and cell interactions
     // ...
+    const checkWin = () => {
+        for (const condition of conditions) {
+            const [a, b, c] = condition;
+            if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
+                result.textContent = `${currentPlayer} wins!`;
+                btns.forEach(btn => btn.disabled = true); 
+            }
+        }
+        return false; // 
+    };
+    
 };
 
     /*
