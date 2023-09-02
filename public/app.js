@@ -16,15 +16,14 @@ let conditions = [
 
 // Function to handle player moves
 const ticTacToe = (element, index) => {
-    // Your game logic here
-    const ticTacToe = (element, index) => {
-        if (cells[index] === '' && !checkWin()) {
-            cells[index] = currentPlayer;
-            element.textContent = currentPlayer;
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            // Display the current player's turn
-            result.textContent = `Current Player: ${currentPlayer}`;
-        }
+    
+    if (cells[index] === '' && !checkWin()) {
+        cells[index] = currentPlayer;
+        element.textContent = currentPlayer;
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        // Display the current player's turn
+        result.textContent = `Current Player: ${currentPlayer}`;
+    }
     };
     
     /*
@@ -54,7 +53,6 @@ const ticTacToe = (element, index) => {
         return false; // 
     };
     
-};
 
     /*
     **Part 2: Reset Function (Add your code here)**
@@ -75,6 +73,14 @@ const resetGame = () => {
 
     // Your code to re-enable buttons
     // ...
+
+    cells = ['', '', '', '', '', '', '', '', '']; 
+    btns.forEach(btn => btn.textContent = ''); 
+    btns.forEach(btn => btn.disabled = false); 
+    currentPlayer = 'X'; 
+    result.textContent = 'Current Player: X'; 
+    
+    
 };
 
 btns.forEach((btn, i) => {
